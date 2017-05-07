@@ -196,14 +196,14 @@ Partial Class Form1
         'MenuItemSettingFont
         '
         Me.MenuItemSettingFont.Name = "MenuItemSettingFont"
-        Me.MenuItemSettingFont.Size = New System.Drawing.Size(211, 38)
+        Me.MenuItemSettingFont.Size = New System.Drawing.Size(268, 38)
         Me.MenuItemSettingFont.Text = "フォント"
         '
         'MenuItemSettingEncoding
         '
         Me.MenuItemSettingEncoding.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MenuItemSettingEncodingSelection})
         Me.MenuItemSettingEncoding.Name = "MenuItemSettingEncoding"
-        Me.MenuItemSettingEncoding.Size = New System.Drawing.Size(211, 38)
+        Me.MenuItemSettingEncoding.Size = New System.Drawing.Size(268, 38)
         Me.MenuItemSettingEncoding.Text = "文字コード"
         '
         'MenuItemSettingEncodingSelection

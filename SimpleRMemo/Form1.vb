@@ -71,19 +71,19 @@ Public Class Form1
     ''' <summary>
     ''' 文字コードプロパティ
     ''' </summary>
-    Private EncordingValue As String
-    Private Property Encording As String
+    Private EncodingValue As String
+    Private Property Encoding As String
 
         Get
-            Return EncordingValue
+            Return EncodingValue
         End Get
 
         '文字コードセット
         Set(value As String)
             If value = "" Then
-                EncordingValue = "shift_jis"
+                EncodingValue = "shift_jis"
             Else
-                EncordingValue = value
+                EncodingValue = value
             End If
         End Set
     End Property
@@ -194,7 +194,7 @@ Public Class Form1
         End If
         Me.SetDesktopBounds(l, t, w, h)
         'エンコーディング
-        Encording = regKey.GetValue("Encording", "shift_jis")
+        Encoding = regKey.GetValue("Encoding", "shift_jis")
 
     End Sub
 
@@ -408,8 +408,12 @@ Public Class Form1
     ''' <param name="e"></param>
     Private Sub MenuItemSettingEncodingSelection_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MenuItemSettingEncodingSelection.SelectedIndexChanged
 
+
         '文字コード設定
-        Encording = MenuItemSettingEncodingSelection.Text
+        Encoding = MenuItemSettingEncodingSelection.Text
+
+        'Dim bytes() As Byte = System.Text.Encoding.GetEncoding(Encoding).GetBytes(TextBoxMain.Text)
+        'TextBoxMain.Text = System.Text.Encoding.GetEncoding(Encoding).GetString(bytes)
 
         '入力されているorファイルが開かれているときは編集されているとする
         If TextBoxMain.Text.Length <> 0 Then
@@ -427,7 +431,7 @@ Public Class Form1
     Private Sub MenuItemSetting_DropDownOpening(sender As Object, e As EventArgs) Handles MenuItemSetting.DropDownOpening
 
         '設定されている文字コードをメニューに反映
-        MenuItemSettingEncodingSelection.Text = Encording
+        MenuItemSettingEncodingSelection.Text = Encoding
 
     End Sub
 
@@ -532,7 +536,7 @@ Public Class Form1
         regKey.SetValue("Width", DesktopBounds.Width)
         regKey.SetValue("Height", DesktopBounds.Height)
         '文字コード
-        regKey.SetValue("Encording", Encording)
+        regKey.SetValue("Encoding", Encoding)
 
     End Sub
 
@@ -547,7 +551,7 @@ Public Class Form1
             'テキストボックスの中身を置き換える
             TextBoxMain.Text = System.IO.File.ReadAllText(
                                             value,
-                                            System.Text.Encoding.GetEncoding(Encording))
+                                            System.Text.Encoding.GetEncoding(Encoding))
 
             FileName = value
 
@@ -569,7 +573,7 @@ Public Class Form1
         System.IO.File.WriteAllText(
                             value,
                             TextBoxMain.Text,
-                            System.Text.Encoding.GetEncoding(Encording))
+                            System.Text.Encoding.GetEncoding(Encoding))
 
         FileName = value
 
