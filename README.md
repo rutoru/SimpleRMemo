@@ -5,8 +5,8 @@
 【連絡先】http://rutoru.com/  
 【配布元】http://rutoru.com/  
 【転載の可否】可  
-【登 録 名】setup.exe  
-【圧縮形式】setup.zip  
+【登 録 名】Setup.msi  
+【圧縮形式】  
 【動作環境】Windows 10  
 【開発環境】Visual Studio 2017  
   
@@ -28,17 +28,16 @@
 　Windows 10 Creators Updateで動作確認しています。  
   
 ・ファイル構成  
-　setup.exe　(るとるのメモ帳インストーラ)  
-　README.TXT　(この説明ファイル)  
+　Setup.msi　(るとるのメモ帳インストーラ)  
 
 ・インストール方法
-  配布ファイル(setup.exe)自体がインストーラです。  
+  配布ファイル(Setup.msi)自体がインストーラです。  
   それをダブルクリックして開いて下さい。  
 
 ・アンインストール方法  
 　削除したくなった時は、コントロールパネルの中の  
 　「アプリケーションの追加と削除」のアイコンを開いて、  
-　一覧から「るとるのメモ帳」を選択しアンインストールして下さい。  
+　一覧から「SimpleRMemo」を選択しアンインストールして下さい。  
 　レジストリキー「\HKEY_CURRENT_USER\RutoruSoftware\SimpleRMemo」を削除して下さい。  
   
 ・使用方法  
